@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1525
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QMuPDFReader", "QMuPDFReader\QMuPDFReader.vcxproj", "{A1D7283F-83CE-4F17-9292-7F6754F599E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1D7283F-83CE-4F17-9292-7F6754F599E6}.Debug|x64.ActiveCfg = Debug|x64
+		{A1D7283F-83CE-4F17-9292-7F6754F599E6}.Debug|x64.Build.0 = Debug|x64
+		{A1D7283F-83CE-4F17-9292-7F6754F599E6}.Debug|x86.ActiveCfg = Debug|Win32
+		{A1D7283F-83CE-4F17-9292-7F6754F599E6}.Debug|x86.Build.0 = Debug|Win32
+		{A1D7283F-83CE-4F17-9292-7F6754F599E6}.Release|x64.ActiveCfg = Release|x64
+		{A1D7283F-83CE-4F17-9292-7F6754F599E6}.Release|x64.Build.0 = Release|x64
+		{A1D7283F-83CE-4F17-9292-7F6754F599E6}.Release|x86.ActiveCfg = Release|Win32
+		{A1D7283F-83CE-4F17-9292-7F6754F599E6}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		Qt5Version = Qt5.12.11_msvc2017_64
+		SolutionGuid = {379B402B-FF02-41A0-BEFD-AF6372D50ED8}
+	EndGlobalSection
+EndGlobal
