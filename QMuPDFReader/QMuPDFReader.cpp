@@ -4,6 +4,7 @@
 #include <QScrollBar>
 #include <QPainter>
 #include <QPrinter>
+#include <QRegExpValidator>
 
 QMuPDFReader::QMuPDFReader(QWidget *parent)
     : QWidget(parent)
@@ -19,6 +20,10 @@ QMuPDFReader::QMuPDFReader(QWidget *parent)
 		ui.scrollArea->verticalScrollBar()->setStyleSheet(strStyle);
 	}
 
+	QRegExp regx("[0-9]+$");
+	QValidator *validator = new QRegExpValidator(regx);
+	ui.lineEdit_pageInfo->setValidator(validator);
+
 	connect(ui.pushButton_close, &QPushButton::clicked, this, &QWidget::close);
 	connect(ui.pushButton_openPDF, &QPushButton::clicked, this, &QMuPDFReader::sltOpenPDF);
 	connect(ui.pushButton_prevPage, &QPushButton::clicked, this, &QMuPDFReader::sltPreviousPage);
@@ -26,6 +31,7 @@ QMuPDFReader::QMuPDFReader(QWidget *parent)
 	connect(ui.pushButton_zoomOut, &QPushButton::clicked, this, &QMuPDFReader::sltZoomOut);
 	connect(ui.pushButton_nextPage, &QPushButton::clicked, this, &QMuPDFReader::sltNextPage);
 	connect(ui.pushButton_printer, &QPushButton::clicked, this, &QMuPDFReader::sltPrinterPDF);
+	connect(ui.pushButton_goToPage, &QPushButton::clicked, this, &QMuPDFReader::sltGoToPage);
 	connect(ui.pdfPages, &SequentialPageWidget::updatePdfInfo, this, &QMuPDFReader::sltUpdateInfo);
 }
 
@@ -105,20 +111,16 @@ void QMuPDFReader::sltGoToPage()
 {
 	int page = 0;
 	QString pagetext = ui.lineEdit_pageInfo->text();
-	QString pageinfo = pagetext.split('/').first();
-	if (pageinfo.isEmpty()){
+	if (!pagetext.isEmpty()){
 		page = ui.lineEdit_pageInfo->text().toInt() - 1;
+		ui.pdfPages->goToPage(page);
+		ui.scrollArea->verticalScrollBar()->setValue(ui.pdfPages->yForPage());
 	}
-	else{
-		page = pageinfo.toInt() - 1;
-	}
-	ui.pdfPages->goToPage(page);
-	ui.scrollArea->verticalScrollBar()->setValue(ui.pdfPages->yForPage());
 }
 
 void QMuPDFReader::sltUpdateInfo(int pageIndex, int totalPages, qreal zoom)
 {
-	ui.lineEdit_pageInfo->setText(QString("%1/%2").arg(pageIndex + 1).arg(totalPages));
+	ui.label_pdfPage->setText(QString("%1/%2").arg(pageIndex + 1).arg(totalPages));
 	ui.label_zoomFactor->setText(QString("%1%").arg(qRound(zoom * 100)));
 }
 

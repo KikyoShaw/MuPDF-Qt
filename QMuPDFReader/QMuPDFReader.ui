@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
+    <width>1041</width>
     <height>800</height>
    </rect>
   </property>
@@ -108,7 +108,26 @@ QPushButton
           <number>0</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_pdfFileName"/>
+          <widget class="QLabel" name="label_pdfFileName">
+           <property name="styleSheet">
+            <string notr="true">	font-family: 微软雅黑;
+	font-size: 14px;
+	color: #FFFFFF;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_openPDF">
@@ -165,35 +184,6 @@ QPushButton
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_pageInfo">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background: rgba(234, 234, 234, 0.15);
-border-radius: 15px;
-font-size: 12px;
-font-family: 微软雅黑;
-color: #FFFFFF;</string>
-           </property>
-           <property name="text">
-            <string>0/0</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QPushButton" name="pushButton_nextPage">
            <property name="minimumSize">
             <size>
@@ -212,6 +202,60 @@ color: #FFFFFF;</string>
            </property>
            <property name="text">
             <string>下一页</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_pageInfo">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background: rgba(234, 234, 234, 0.15);
+border-radius: 15px;
+font-size: 12px;
+font-family: 微软雅黑;
+color: #FFFFFF;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="placeholderText">
+            <string>输入页码</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_goToPage">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>跳转</string>
            </property>
           </widget>
          </item>
@@ -313,6 +357,28 @@ color: #FFFFFF;</string>
            </property>
           </widget>
          </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_pdfPage">
+           <property name="styleSheet">
+            <string notr="true">font-size: 12px;
+font-family: 微软雅黑;
+color: #FFFFFF;</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -331,7 +397,7 @@ QScrollArea &gt; QWidget &gt; QScrollBar { background: palette(base); }</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>978</width>
+           <width>1019</width>
            <height>728</height>
           </rect>
          </property>
