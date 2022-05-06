@@ -1,4 +1,6 @@
 # MuPDF-Qt
+
+#### 介绍
 基于MuPDF开发的简易PDF阅读器
 
 由于MuPDF用到的库是64位的
@@ -14,6 +16,10 @@
 
 TODO：后续新增PDF编辑功能
 
+#### 效果图
+![image](https://github.com/KikyoShaw/MuPDF-Qt/blob/master/GIF/1.gif)
+
+#### 参考资料
 官方网站
 https://www.mupdf.com/
 
